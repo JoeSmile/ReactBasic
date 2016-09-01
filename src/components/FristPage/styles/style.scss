@@ -1,0 +1,29 @@
+$navBg : burlywood;
+$conBg : aquamarine;
+
+.FristPage{
+    display: flex;
+    height: 100%;
+}
+
+.navLeft{
+    width: 200px;
+    background-color: $navBg;
+    text-align: center;
+    padding-top: 200px;
+    li{
+        margin-bottom: 20px;
+    }
+    a{
+        text-decoration: underline;
+    }
+}
+
+.contentPage{
+    flex:1;
+    background-color: $conBg;
+    text-align: center;
+    padding-top: 200px;
+    font-size: 25px;
+    word-spacing:10px;
+}
