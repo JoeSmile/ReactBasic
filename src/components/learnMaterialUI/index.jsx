@@ -5,7 +5,7 @@ const $ = require('jquery');
 const Login = require('./Login');
 const Register = require('./Register');
 
-let FristPage = React.createClass({
+let LearnMaterialUI = React.createClass({
 
     getInitialState: function () {
         return {
@@ -56,4 +56,4 @@ let FristPage = React.createClass({
         );
     }
 });
-export default FristPage;
+export default LearnMaterialUI;

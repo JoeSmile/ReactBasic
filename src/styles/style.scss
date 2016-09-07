@@ -1,6 +1,6 @@
 @import "./normalize";
 @import "./mainPage";
-@import "../components/FristPage/styles/style";
+@import "../components/LearnMaterialUI/styles/style";
 
 html, body {
 	width:100%;
@@ -15,7 +15,7 @@ html, body {
 	user-select:none;
 }
 ul{
-	margin: 0;  
+	margin: 0;
 	padding: 0;
 }
 #app,.App{ height: 100%;}
