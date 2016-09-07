@@ -1,5 +1,8 @@
 ## React 一个简单的框架
 
+2016.9.7
+加入 react-router
+粗略的定义了 HomePage 路由，有待优化
 
 2016.9.7
 加入 url-loader 处理图片

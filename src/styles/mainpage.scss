@@ -10,22 +10,44 @@
 .textRight{ text-align: right; }
 
 // MainPage style
-.MainPage{
+.App{
     height: 100%;
     display: flex;
     flex-direction: column;
+    .Header{
+        height: 30px;
+        line-height: 30px;
+        ul{
+            li{
+                display: inline-block;
+                width: 200px;
+                text-align: center;
+                border: 1px solid #CCC;
+            }
+        }
+    }
     .HomePage{
         display: flex;
         height: 100%;
         div.area{
             flex: 1;
-            border: 1px solid;
+            border: 1px solid #CCC;
             position: relative;
+            text-align: center;
+            a{
+                height: 100%;
+                width: 100%;
+                display: inline-block;
+            }
+            .name{
+                margin-top: 10px;
+            }
         }
-        div.react_log,
-        div.es6_logo,
-        div.electron_logo,
-        div.materialui_logo{
+        div.React_logo,
+        div.ES6_logo,
+        div.Electron_logo,
+        div.MaterialUI_logo,
+        div.ReactRouter_logo{
             // 居中
             width: 300px;
             height: 300px;
@@ -33,19 +55,22 @@
             top: 50%;
             left: 50%;
             position: absolute;
-            background-size: cover;
+            background-size: 300px 300px;//懒得弄图片了，改天再修正大小
         }
-        .react_log{
-            background: url('images/react_logo.png') center center no-repeat;
+        .React_logo{
+            background: url('images/React_logo.png') center center no-repeat;
         }
-        .es6_logo{
-            background: url('./images/es6_logo.png') center center no-repeat;
+        .ES6_logo{
+            background: url('./images/ES6_logo.png') center center no-repeat;
         }
-        .electron_logo{
-            background: url('./images/electron_logo.png') center center no-repeat;
+        .Electron_logo{
+            background: url('./images/Electron_logo.png') center center no-repeat;
         }
-        .materialui_logo{
-            background: url('./images/materualui_logo.png') center center no-repeat;
+        .MaterialUI_logo{
+            background: url('./images/MaterialUI_logo.png') center center no-repeat;
+        }
+        .ReactRouter_logo{
+            background: url('./images/ReactRouter_logo.png') center center no-repeat;
         }
     }
 }

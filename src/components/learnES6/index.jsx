@@ -3,14 +3,14 @@ const React = require('react');
 const {Component} = require('react');
 const $ = require('jquery');
 
-let LearnMaterialUI = React.createClass({
+let LearnES6 = React.createClass({
 
     render(){
         return (
-               <div className = 'LearnMaterialUI'>
-                   LearnMaterialUILearnMaterialUILearnMaterialUILearnMaterialUILearnMaterialUI
+               <div className = 'LearnES6'>
+                   LearnES6
                </div>
         );
     }
 });
-export default LearnMaterialUI;
+export default LearnES6;
