@@ -2,7 +2,7 @@ const ReactDOM = require('react-dom');
 const React = require('react');
 const { Component } = require('react');
 const $ = require('jquery');
-const { Router, Route, hashHistory, Link, IndexLink ,IndexRoute} = require('react-router')
+const { Router, Route, hashHistory, Link, IndexLink ,IndexRoute,browserHistory} = require('react-router')
 
 // import MainPage from './components/index';
 import LearnES6 from './components/learnES6/index';
@@ -47,7 +47,7 @@ export default class App extends Component {
                         <div className='area_content'>
                             <div className={item+'_logo'} key={item+'_logo'}>
                                 <Link to={'/'+item}></Link>
-                                <div className='name'><Link to={'/'+item}>{item}</Link></div>
+                                <div className='name'><Link activeStyle={{color: 'red'}} to={'/'+item}>{item}</Link></div>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@ export default class App extends Component {
      */
     renderHeader(){
         let lis = lessonNames.map((item,index)=>{
-             return <li key={'Header'+item}><Link to={'/'+item}>{item}</Link></li>
+             return <li key={'Header'+item}><Link to={'/'+item} activeStyle={{color: 'green'}}>{item}</Link></li>
         });
 
         return <div className='Header'>
@@ -78,22 +78,26 @@ export default class App extends Component {
      * render Page
      */
     renderCoursePage(){
-        let ret,content,head;
+        let ret,content,head,index,pageIndex;
+        let param = this.props.location.search && this.props.location.search.slice(1);
+        if ((index=param.indexOf('pageIndex')) != -1) {
+            pageIndex = param.slice(index+'pageIndex'.length+1);
+        }
         switch (this.props.location.pathname) {
             case '/React':
-                ret = <LearnReact />;
+                ret = <LearnReact pageIndex={pageIndex}/>;
                 break;
             case '/ES6':
-                ret = <LearnES6 />;
+                ret = <LearnES6 pageIndex={pageIndex}/>;
                 break;
             case '/Electron':
-                ret = <LearnElectron />;
+                ret = <LearnElectron pageIndex={pageIndex}/>;
                 break;
             case '/MaterialUI':
-                ret = <LearnMaterialUI />;
+                ret = <LearnMaterialUI pageIndex={pageIndex}/>;
                 break;
             case '/ReactRouter':
-                ret = <LearnReactRouter />;
+                ret = <LearnReactRouter pageIndex={pageIndex} />;
                 break;
             case '/HomePage':
             default:
@@ -101,8 +105,8 @@ export default class App extends Component {
         }
         head = this.renderHeader();
         content = <div className='content'>
-                         {ret}
-                      </div>;
+                    {ret}
+                  </div>;
         return [head,content];
     }
 
@@ -116,12 +120,12 @@ export default class App extends Component {
     }
 }
 let routes = <Route path='/' component={App}>
-                <Route path='/React' component={LearnReact}/>
-                <Route path='/ES6' component={LearnES6}/>
-                <Route path='/Electron' component={LearnElectron}/>
-                <Route path='/MaterialUI' component={LearnMaterialUI}/>
-                <Route path='/ReactRouter' component={LearnReactRouter}/>
-                <Route path='/HomePage' component={App} />
+                <Route path='/React(/:pageIndex)' component={LearnReact}/>
+                <Route path='/ES6(/:pageIndex)' component={LearnES6}/>
+                <Route path='/Electron(/:pageIndex)' component={LearnElectron}/>
+                <Route path='/MaterialUI(/:pageIndex)' component={LearnMaterialUI}/>
+                <Route path='/ReactRouter(/:pageIndex)' component={LearnReactRouter}/>
+                <Route path='/HomePage(/:pageIndex)' component={App} />
             </Route>;
 
 ReactDOM.render(
