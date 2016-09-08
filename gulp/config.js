@@ -11,6 +11,10 @@ module.exports = {
             src:src + '/styles/images/*',
             dest: dest + '/styles/images'
         },
+        componentsPic:{
+            src:  src + '/components/*/styles/images/*',
+            dest: dest + '/styles/images'
+        },
         html:{
             src: src + '/index.html',
             dest: dest

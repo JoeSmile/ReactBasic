@@ -1,0 +1,29 @@
+.LearnReactRouter{
+    display: flex;
+    height: 100%;
+    .nav{
+        width: 330px;
+        border-right: 1px solid;
+        & > ul.tableOfContents{
+            margin-top: 30px;
+            margin-left: 20px;
+        }
+        ul.subUl{
+            margin-left: 30px;
+        }
+        li{
+            height: 25px;
+            line-height: 25px;
+        }
+    }
+    .aticle{
+        .introduction{
+            .withoutReactRouter{
+                height: 700px;
+                width: 500px;
+                background:url('./images/withoutReactRouter.png');
+            }
+        }
+
+    }
+}

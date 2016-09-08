@@ -119,6 +119,7 @@ export default class App extends Component {
         );
     }
 }
+
 let routes = <Route path='/' component={App}>
                 <Route path='/React(/:pageIndex)' component={LearnReact}/>
                 <Route path='/ES6(/:pageIndex)' component={LearnES6}/>

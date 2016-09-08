@@ -73,4 +73,8 @@
             background: url('./images/ReactRouter_logo.png') center center no-repeat;
         }
     }
+
+    & > .content{
+        height: 100%;
+    }
 }
