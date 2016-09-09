@@ -17,6 +17,8 @@
         }
     }
     .aticle{
+        overflow: auto;
+        width: 100%;
         .introduction{
             .withoutReactRouter{
                 height: 700px;
